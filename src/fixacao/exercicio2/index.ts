@@ -10,6 +10,11 @@ Tendo isso em mente, faça o que se pede:
   a. Quais são as entradas e saídas dessa função? 
   b. Faça a tipagem da função.
 */
+type Posts ={
+  autor: string,
+  texto: string
+}
+
 
 const posts = [
   {
@@ -34,10 +39,12 @@ const posts = [
   }
 ]
 
-function buscarPostsPorAutor(posts, autorInformado) {
+function buscarPostsPorAutor(posts: Array<Posts>, autorInformado: string) {
   return posts.filter(
     (post) => {
       return post.autor === autorInformado
     }
   )
 }
+
+console.table(buscarPostsPorAutor( posts,"Dobby" ));
